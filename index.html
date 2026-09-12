@@ -380,6 +380,34 @@
 </head>
 
 <body>
+
+  <!-- Yandex.Metrika counter -->
+  <script>
+    window.KURIERIO_METRIKA_ID = 112526070;
+
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j=0; j<document.scripts.length; j++) {
+        if (document.scripts[j].src === r) return;
+      }
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=112526070', 'ym');
+
+    ym(112526070, 'init', {
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true,
+      webvisor:false
+    });
+  </script>
+  <noscript>
+    <div>
+      <img src="https://mc.yandex.ru/watch/112526070" style="position:absolute; left:-9999px;" alt="">
+    </div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+
   <div class="page">
 
     <header class="wrap">
@@ -539,7 +567,7 @@
 
     <footer class="wrap">
       <strong>kurierio.ru</strong>
-      Информация собрана по материалам Яндекс Про и Яндекс Про Карьера.
+      Информация собрана по материалам Яндекс Про.
       <div class="source-links">
         <a href="https://pro.yandex.ru/ru-ru/bor/start?job=eats-courier" target="_blank" rel="noopener">Регистрация и требования</a>
         ·
@@ -568,12 +596,29 @@
       });
     });
 
-    // Яндекс Метрика будет добавлена после создания счётчика.
-    // Обе кнопки регистрации будут считать цель registration_click.
+    // Считаем клики по обеим кнопкам регистрации.
     document.querySelectorAll('.js-registration').forEach(function(link){
-      link.addEventListener('click', function(){
+      link.addEventListener('click', function(event){
         if (typeof window.ym === 'function' && window.KURIERIO_METRIKA_ID) {
-          window.ym(window.KURIERIO_METRIKA_ID, 'reachGoal', 'registration_click');
+          event.preventDefault();
+          const href = link.href;
+          let redirected = false;
+
+          const go = function(){
+            if (redirected) return;
+            redirected = true;
+            window.location.href = href;
+          };
+
+          window.ym(
+            window.KURIERIO_METRIKA_ID,
+            'reachGoal',
+            'registration_click',
+            {},
+            go
+          );
+
+          setTimeout(go, 700);
         }
       });
     });
