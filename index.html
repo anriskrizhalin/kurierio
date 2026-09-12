@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F1C84A">
+  <meta name="description" content="Информация о работе курьером и переход к регистрации на официальном сайте сервиса.">
+  <title>Kurierio — работа курьером</title>
+  <style>
+    :root{
+      --yellow:#F1C84A;
+      --black:#111111;
+      --line:rgba(17,17,17,.16);
+      --shadow:0 18px 50px rgba(50,40,10,.14);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color:var(--black);
+      background:var(--yellow);
+      -webkit-font-smoothing:antialiased;
+    }
+    .page{min-height:100vh;display:flex;flex-direction:column}
+    .wrap{width:min(100% - 32px,760px);margin:0 auto}
+    header{padding:22px 0 8px}
+    .brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.03em;font-size:20px}
+    .mark{width:27px;height:27px;display:grid;grid-template-columns:repeat(5,3px);gap:3px;align-items:end}
+    .mark span{width:3px;border-radius:3px;background:var(--black)}
+    .mark span:nth-child(1),.mark span:nth-child(3),.mark span:nth-child(5){height:23px}
+    .mark span:nth-child(2),.mark span:nth-child(4){height:13px}
+    main{flex:1}
+    .hero{padding:34px 0 26px}
+    .eyebrow{font-size:14px;font-weight:650;margin-bottom:14px;color:#332f24}
+    h1{margin:0;max-width:680px;font-size:clamp(42px,12vw,76px);line-height:.91;letter-spacing:-.065em;font-weight:900}
+    .service{display:block;margin-top:9px;font-size:.53em;letter-spacing:-.045em;line-height:1}
+    .lead{margin:26px 0 0;max-width:540px;font-size:19px;line-height:1.42;font-weight:520;color:#28251c}
+    .facts{margin:27px 0 0;display:grid;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .fact{padding:15px 0;font-size:17px;font-weight:650;border-bottom:1px solid var(--line)}
+    .fact:last-child{border-bottom:0}
+    .cta-block{margin:30px 0 12px}
+    .cta{
+      display:flex;min-height:64px;width:100%;align-items:center;justify-content:center;padding:16px 20px;
+      background:var(--black);color:white;text-decoration:none;font-size:18px;font-weight:800;
+      border:2px solid var(--black);border-radius:12px;box-shadow:0 8px 0 rgba(17,17,17,.10)
+    }
+    .cta:active{transform:translateY(2px)}
+    .under-cta{margin:11px 2px 0;font-size:13px;line-height:1.4;color:#4b4638}
+    .how{margin:38px 0 18px;background:rgba(255,253,246,.42);border:1px solid rgba(17,17,17,.14);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+    .how h2{margin:0 0 16px;font-size:25px;letter-spacing:-.035em}
+    ol{margin:0;padding:0;list-style:none;counter-reset:steps}
+    li{counter-increment:steps;display:grid;grid-template-columns:32px 1fr;gap:11px;align-items:start;padding:10px 0;font-size:16px;line-height:1.35;border-top:1px solid rgba(17,17,17,.12)}
+    li:first-child{border-top:0}
+    li::before{content:counter(steps);width:28px;height:28px;display:grid;place-items:center;border:1px solid rgba(17,17,17,.45);border-radius:50%;font-weight:800;font-size:13px}
+    footer{padding:24px 0 34px;color:#554f40;font-size:12px;line-height:1.5}
+    footer strong{color:#2c291f}
+    @media (min-width:700px){
+      header{padding-top:30px}.hero{padding-top:58px}
+      .facts{grid-template-columns:repeat(3,1fr)}
+      .fact{padding:18px 18px 18px 0;border-bottom:0;border-right:1px solid var(--line)}
+      .fact + .fact{padding-left:18px}.fact:last-child{border-right:0}
+      .cta{max-width:420px}.under-cta{max-width:420px}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="wrap">
+      <div class="brand" aria-label="Kurierio">
+        <span class="mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+        <span>kurierio.ru</span>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <div class="eyebrow">К партнёру сервиса</div>
+        <h1>Работа курьером <span class="service">Яндекс Еда</span></h1>
+
+        <p class="lead">
+          Простой способ начать выполнять заказы в Москве.
+          Регистрация проходит на официальной странице сервиса.
+        </p>
+
+        <div class="facts">
+          <div class="fact">Гибкое расписание</div>
+          <div class="fact">Можно без опыта</div>
+          <div class="fact">Пешком, велосипед или авто</div>
+        </div>
+
+        <div class="cta-block">
+          <a id="registration-button" class="cta"
+             href="https://ya.cc/t/CyaH3RWH9ZWJVM"
+             target="_blank" rel="noopener noreferrer">
+            Перейти к регистрации
+          </a>
+          <p class="under-cta">После нажатия откроется страница регистрации Яндекс Еды.</p>
+        </div>
+      </section>
+
+      <section class="how">
+        <h2>Как начать</h2>
+        <ol>
+          <li>Перейдите к регистрации.</li>
+          <li>Заполните анкету на странице сервиса.</li>
+          <li>Получите доступ к выполнению заказов.</li>
+          <li>Выберите удобное время и начните доставлять.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="wrap">
+      <strong>kurierio.ru</strong><br>
+      Независимая информационная страница партнёра сервиса.
+      Не является официальным сайтом Яндекса.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('registration-button').addEventListener('click', function () {
+      if (typeof window.ym === 'function' && window.KURIERIO_METRIKA_ID) {
+        window.ym(window.KURIERIO_METRIKA_ID, 'reachGoal', 'registration_click');
+      }
+    });
+  </script>
+</body>
+</html>
