@@ -4,29 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#F1C84A">
-  <meta name="description" content="Информация о работе курьером и переход к регистрации на официальном сайте сервиса.">
-  <title>Kurierio — работа курьером</title>
+  <meta name="description" content="Работа курьером Яндекс Еды в Москве: условия, доход, документы и регистрация.">
+  <title>Kurierio – работа курьером</title>
 
   <style>
     :root{
       --yellow:#F1C84A;
       --black:#111111;
-      --muted:#4f4a3d;
-      --line:rgba(17,17,17,.16);
-      --shadow:0 16px 42px rgba(50,40,10,.12);
+      --muted:#504936;
+      --line:rgba(17,17,17,.17);
+      --paper:rgba(255,253,244,.42);
+      --shadow:0 14px 40px rgba(55,42,7,.11);
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-
     body{
       margin:0;
-      font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      color:var(--black);
       background:var(--yellow);
+      color:var(--black);
+      font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
+
+    a{color:inherit}
+    button,a{-webkit-tap-highlight-color:transparent}
 
     .page{
       min-height:100vh;
@@ -35,7 +38,7 @@
     }
 
     .wrap{
-      width:min(100% - 32px, 800px);
+      width:min(100% - 32px,780px);
       margin:0 auto;
     }
 
@@ -47,9 +50,9 @@
       display:inline-flex;
       align-items:center;
       gap:10px;
-      font-weight:800;
-      letter-spacing:-.03em;
       font-size:19px;
+      font-weight:850;
+      letter-spacing:-.03em;
     }
 
     .mark{
@@ -61,37 +64,34 @@
       align-items:end;
       padding:2px 0;
     }
-
     .mark span{
       width:3px;
       border-radius:3px;
       background:var(--black);
     }
-
-    .mark span:nth-child(1){height:23px}
-    .mark span:nth-child(2){height:13px}
-    .mark span:nth-child(3){height:23px}
-    .mark span:nth-child(4){height:13px}
+    .mark span:nth-child(1),
+    .mark span:nth-child(3),
     .mark span:nth-child(5){height:23px}
+    .mark span:nth-child(2),
+    .mark span:nth-child(4){height:13px}
 
     main{flex:1}
 
     .hero{
-      padding:28px 0 22px;
+      padding:30px 0 22px;
     }
 
     .eyebrow{
-      font-size:14px;
-      font-weight:650;
-      letter-spacing:.01em;
       margin-bottom:12px;
-      color:#332f24;
+      font-size:14px;
+      font-weight:700;
+      color:#352f20;
     }
 
     h1{
       margin:0;
-      max-width:680px;
-      font-size:clamp(40px,10.5vw,72px);
+      max-width:700px;
+      font-size:clamp(42px,10.6vw,72px);
       line-height:.93;
       letter-spacing:-.06em;
       font-weight:900;
@@ -101,177 +101,280 @@
       display:block;
       margin-top:8px;
       font-size:.54em;
-      letter-spacing:-.045em;
       line-height:1;
+      letter-spacing:-.045em;
     }
 
     .lead{
       margin:22px 0 0;
-      max-width:560px;
+      max-width:610px;
       font-size:18px;
-      line-height:1.4;
-      font-weight:520;
-      color:#28251c;
+      line-height:1.42;
+      color:#2c281d;
     }
 
     .facts{
-      margin:24px 0 0;
-      display:grid;
-      gap:0;
+      margin-top:24px;
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
     }
 
     .fact{
       padding:13px 0;
-      font-size:16.5px;
-      font-weight:650;
       border-bottom:1px solid var(--line);
+      font-size:16.5px;
+      font-weight:700;
+      line-height:1.25;
     }
-
     .fact:last-child{border-bottom:0}
 
     .cta-block{
-      margin:25px 0 8px;
+      margin:25px 0 0;
     }
 
     .cta{
       display:flex;
-      min-height:62px;
-      width:100%;
       align-items:center;
       justify-content:center;
+      min-height:62px;
+      width:100%;
       padding:15px 20px;
       background:var(--black);
-      color:white;
+      color:#fff;
       text-decoration:none;
-      font-size:18px;
-      font-weight:800;
       border:2px solid var(--black);
       border-radius:12px;
+      font-size:18px;
+      font-weight:850;
+      text-align:center;
       box-shadow:0 7px 0 rgba(17,17,17,.09);
-      transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
-      -webkit-tap-highlight-color:transparent;
+      transition:transform .12s ease,box-shadow .12s ease;
     }
-
     .cta:active{
       transform:translateY(2px);
       box-shadow:0 4px 0 rgba(17,17,17,.07);
     }
 
-    .under-cta{
+    .small{
       margin:9px 2px 0;
       font-size:12.5px;
       line-height:1.4;
-      color:#4b4638;
+      color:var(--muted);
     }
 
-    .how{
-      margin:30px 0 14px;
-      background:rgba(255,253,246,.42);
-      border:1px solid rgba(17,17,17,.14);
-      border-radius:18px;
+    .section{
+      padding:34px 0 0;
+    }
+
+    .section h2{
+      margin:0 0 14px;
+      font-size:26px;
+      line-height:1.1;
+      letter-spacing:-.035em;
+      font-weight:900;
+    }
+
+    .section p{
+      margin:0;
+      font-size:16px;
+      line-height:1.5;
+      color:#302b20;
+    }
+
+    .income{
+      margin-top:15px;
       padding:20px;
+      border:1px solid rgba(17,17,17,.15);
+      border-radius:18px;
+      background:var(--paper);
       box-shadow:var(--shadow);
     }
 
-    .how h2{
-      margin:0 0 14px;
-      font-size:24px;
-      letter-spacing:-.035em;
+    .income-value{
+      display:block;
+      margin-bottom:6px;
+      font-size:clamp(31px,8vw,46px);
+      line-height:1;
+      letter-spacing:-.05em;
+      font-weight:900;
     }
 
-    ol{
-      margin:0;
-      padding:0;
-      list-style:none;
-      counter-reset:steps;
+    .income-label{
+      font-size:14px;
+      line-height:1.42;
+      color:#3d3727;
     }
 
-    li{
-      counter-increment:steps;
+    .steps{
+      margin-top:12px;
+      border-top:1px solid var(--line);
+    }
+
+    .step{
       display:grid;
-      grid-template-columns:32px 1fr;
+      grid-template-columns:31px 1fr;
       gap:10px;
-      align-items:start;
-      padding:9px 0;
+      padding:13px 0;
+      border-bottom:1px solid var(--line);
       font-size:15.5px;
-      line-height:1.35;
-      border-top:1px solid rgba(17,17,17,.12);
+      line-height:1.4;
     }
 
-    li:first-child{border-top:0}
-
-    li::before{
-      content:counter(steps);
+    .step-num{
       width:27px;
       height:27px;
       display:grid;
       place-items:center;
-      border:1px solid rgba(17,17,17,.45);
+      border:1px solid rgba(17,17,17,.46);
       border-radius:50%;
-      font-weight:800;
       font-size:12.5px;
+      font-weight:850;
     }
 
-    footer{
-      padding:20px 0 28px;
-      color:#554f40;
-      font-size:11.5px;
+    .requirements{
+      margin-top:14px;
+      display:grid;
+      gap:10px;
+    }
+
+    .req{
+      padding:16px 0;
+      border-top:1px solid var(--line);
+    }
+    .req:last-child{
+      border-bottom:1px solid var(--line);
+    }
+    .req strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:16px;
+    }
+    .req span{
+      font-size:14.5px;
+      line-height:1.45;
+      color:#3d3728;
+    }
+
+    .docs-switch{
+      display:flex;
+      gap:8px;
+      margin:16px 0 12px;
+    }
+
+    .tab{
+      appearance:none;
+      border:1px solid rgba(17,17,17,.28);
+      background:transparent;
+      color:var(--black);
+      border-radius:999px;
+      padding:10px 13px;
+      font:inherit;
+      font-size:14px;
+      font-weight:750;
+      cursor:pointer;
+    }
+
+    .tab.active{
+      background:var(--black);
+      color:#fff;
+      border-color:var(--black);
+    }
+
+    .docs{
+      padding:18px;
+      border:1px solid rgba(17,17,17,.14);
+      border-radius:16px;
+      background:var(--paper);
+    }
+
+    .docs ul{
+      margin:0;
+      padding-left:18px;
+    }
+    .docs li{
+      margin:0 0 8px;
+      font-size:14.5px;
+      line-height:1.42;
+    }
+    .docs li:last-child{margin-bottom:0}
+
+    .docs-panel[hidden]{display:none}
+
+    .patent{
+      margin-top:15px;
+      padding:16px 18px;
+      border:1px solid rgba(17,17,17,.28);
+      border-radius:14px;
+    }
+    .patent strong{
+      display:block;
+      margin-bottom:5px;
+      font-size:15.5px;
+    }
+    .patent p{
+      font-size:14px;
       line-height:1.45;
     }
 
-    footer strong{color:#2c291f}
+    .final-cta{
+      padding:34px 0 4px;
+    }
+
+    footer{
+      padding:28px 0 calc(30px + env(safe-area-inset-bottom));
+      font-size:11.5px;
+      line-height:1.5;
+      color:#5b5441;
+    }
+
+    footer strong{
+      display:block;
+      margin-bottom:5px;
+      color:#2d281d;
+      font-size:12.5px;
+    }
+
+    .source-links{
+      margin-top:7px;
+    }
+
+    .source-links a{
+      text-underline-offset:2px;
+    }
 
     @media (min-width:700px){
       header{padding-top:28px}
-      .hero{padding-top:44px}
+      .hero{padding-top:46px}
 
       .facts{
+        display:grid;
         grid-template-columns:repeat(3,1fr);
       }
-
       .fact{
         padding:17px 18px 17px 0;
         border-bottom:0;
         border-right:1px solid var(--line);
       }
-
       .fact + .fact{padding-left:18px}
       .fact:last-child{border-right:0}
 
-      .cta{
-        max-width:430px;
-      }
-
-      .under-cta{
-        max-width:430px;
-      }
-
-      .how{
-        max-width:680px;
-      }
+      .cta{max-width:440px}
+      .small{max-width:440px}
+      .income{max-width:610px}
+      .docs{max-width:650px}
+      .patent{max-width:650px}
+      .section{padding-top:44px}
     }
 
     @media (max-width:390px){
-      .wrap{
-        width:min(100% - 24px, 800px);
-      }
-
-      h1{
-        font-size:39px;
-      }
-
-      .lead{
-        font-size:17px;
-      }
+      .wrap{width:min(100% - 24px,780px)}
+      h1{font-size:40px}
+      .lead{font-size:17px}
+      .income-value{font-size:32px}
     }
 
     @media (prefers-reduced-motion:reduce){
-      *{
-        scroll-behavior:auto!important;
-        transition:none!important;
-      }
+      *{scroll-behavior:auto!important;transition:none!important}
     }
   </style>
 </head>
@@ -299,59 +402,180 @@
         </h1>
 
         <p class="lead">
-          Простой способ начать выполнять заказы в Москве.
-          Регистрация проходит на официальной странице сервиса.
+          Доставляйте заказы из ресторанов и магазинов по Москве.
+          Можно работать пешком, на велосипеде или автомобиле и самому выбирать, когда выходить на заказы.
         </p>
 
-        <div class="facts" aria-label="Основные условия">
+        <div class="facts">
           <div class="fact">Гибкое расписание</div>
           <div class="fact">Можно без опыта</div>
           <div class="fact">Пешком, велосипед или авто</div>
         </div>
 
         <div class="cta-block">
-          <a
-            id="registration-button"
-            class="cta"
-            href="https://ya.cc/t/CyaH3RWH9ZWJVM"
-            rel="noopener noreferrer"
-          >
-            Перейти к регистрации
+          <a class="cta js-registration"
+             href="https://ya.cc/t/CyaH3RWH9ZWJVM"
+             rel="noopener noreferrer">
+            Начать регистрацию
           </a>
-
-          <p class="under-cta">
-            После нажатия откроется страница регистрации Яндекс Еды.
-          </p>
+          <p class="small">Первый шаг – указать номер телефона и продолжить оформление.</p>
         </div>
       </section>
 
-      <section class="how">
-        <h2>Как начать</h2>
-        <ol>
-          <li>Перейдите к регистрации.</li>
-          <li>Заполните анкету на странице сервиса.</li>
-          <li>Получите доступ к выполнению заказов.</li>
-          <li>Выберите удобное время и начните доставлять.</li>
-        </ol>
+      <section class="section">
+        <h2>Сколько можно получать</h2>
+        <p>
+          Итог зависит от количества заказов, времени на линии, расстояния и спроса.
+        </p>
+
+        <div class="income">
+          <span class="income-value">до 203 000 ₽ / мес.</span>
+          <span class="income-label">
+            До 203 000 ₽ – ориентир для Москвы. Сколько получится у вас,
+            зависит от количества заказов, времени работы, расстояний и спроса.
+          </span>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Как начать работу</h2>
+
+        <div class="steps">
+          <div class="step">
+            <span class="step-num">1</span>
+            <span>Введите номер телефона на странице регистрации и подтвердите его кодом.</span>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <span>Установите приложение Яндекс Про на смартфон и откройте его.</span>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <span>Когда приложение спросит, как хотите сотрудничать, нажмите «Как курьер Еды». Затем выберите способ доставки – пешком, на велосипеде или авто.</span>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <span>Заполните анкету и дождитесь перехода в главное меню Яндекс Про.</span>
+          </div>
+          <div class="step">
+            <span class="step-num">5</span>
+            <span>Пройдите короткое обучение в приложении.</span>
+          </div>
+          <div class="step">
+            <span class="step-num">6</span>
+            <span>Приложение покажет, как получить термосумку и выйти на первые заказы.</span>
+          </div>
+          <div class="step">
+            <span class="step-num">7</span>
+            <span>Выберите удобный район и время – можно начинать.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Что понадобится</h2>
+
+        <div class="requirements">
+          <div class="req">
+            <strong>Возраст</strong>
+            <span>От 18 лет.</span>
+          </div>
+          <div class="req">
+            <strong>Телефон</strong>
+            <span>Смартфон на Android или iPhone для приложения Яндекс Про.</span>
+          </div>
+          <div class="req">
+            <strong>Документы</strong>
+            <span>Набор зависит от гражданства и статуса. Ниже – основной список для Москвы.</span>
+          </div>
+        </div>
+
+        <div class="docs-switch" role="tablist" aria-label="Документы">
+          <button class="tab active" type="button" data-tab="rf">Гражданин РФ</button>
+          <button class="tab" type="button" data-tab="foreign">Иностранный гражданин</button>
+        </div>
+
+        <div class="docs">
+          <div class="docs-panel" id="docs-rf">
+            <ul>
+              <li>Паспорт.</li>
+              <li>СНИЛС.</li>
+              <li>ИНН.</li>
+              <li>Подтверждённая учётная запись Госуслуг или Мос.ру.</li>
+              <li>Для работы курьером в Москве понадобится регистрация в КИС «АРТ».</li>
+            </ul>
+          </div>
+
+          <div class="docs-panel" id="docs-foreign" hidden>
+            <ul>
+              <li>Паспорт или другой действующий документ, удостоверяющий личность.</li>
+              <li>Для иностранного паспорта могут понадобиться нотариальный перевод и миграционная карта.</li>
+              <li>СНИЛС и ИНН.</li>
+              <li>Подтверждённая учётная запись Госуслуг или Мос.ру.</li>
+              <li>Документ, подтверждающий право работать в России – в зависимости от вашего статуса.</li>
+              <li>Для работы курьером в Москве понадобится регистрация в КИС «АРТ».</li>
+            </ul>
+
+            <div class="patent">
+              <strong>Если для работы нужен патент</strong>
+              <p>
+                Сейчас действует компенсация 25 000 ₽ за оформление патента
+                при выполнении 400 заказов за 30 дней.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <a class="cta js-registration"
+           href="https://ya.cc/t/CyaH3RWH9ZWJVM"
+           rel="noopener noreferrer">
+          Перейти к регистрации
+        </a>
       </section>
 
     </main>
 
     <footer class="wrap">
-      <strong>kurierio.ru</strong><br>
-      Независимая информационная страница партнёра сервиса.
-      Не является официальным сайтом Яндекса.
+      <strong>kurierio.ru</strong>
+      Информация собрана по материалам Яндекс Про и Яндекс Про Карьера.
+      <div class="source-links">
+        <a href="https://pro.yandex.ru/ru-ru/bor/start?job=eats-courier" target="_blank" rel="noopener">Регистрация и требования</a>
+        ·
+        <a href="https://pro.yandex.ru/ru-ru/moskva/knowledge-base/delivery-foot/service-standards/delivery-kisart" target="_blank" rel="noopener">КИС «АРТ»</a>
+        ·
+        <a href="https://pro.yandex.ru/ru-ru/moskva/knowledge-base/courier/zabota/patent" target="_blank" rel="noopener">Патент</a>
+      </div>
     </footer>
 
   </div>
 
   <script>
-    // Яндекс Метрика будет добавлена следующим шагом.
-    // Событие "registration_click" уже предусмотрено.
-    document.getElementById('registration-button').addEventListener('click', function () {
-      if (typeof window.ym === 'function' && window.KURIERIO_METRIKA_ID) {
-        window.ym(window.KURIERIO_METRIKA_ID, 'reachGoal', 'registration_click');
-      }
+    // Tabs: документы
+    const tabs = document.querySelectorAll('.tab');
+    const rf = document.getElementById('docs-rf');
+    const foreign = document.getElementById('docs-foreign');
+
+    tabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const selected = tab.dataset.tab;
+        rf.hidden = selected !== 'rf';
+        foreign.hidden = selected !== 'foreign';
+      });
+    });
+
+    // Яндекс Метрика будет добавлена после создания счётчика.
+    // Обе кнопки регистрации будут считать цель registration_click.
+    document.querySelectorAll('.js-registration').forEach(function(link){
+      link.addEventListener('click', function(){
+        if (typeof window.ym === 'function' && window.KURIERIO_METRIKA_ID) {
+          window.ym(window.KURIERIO_METRIKA_ID, 'reachGoal', 'registration_click');
+        }
+      });
     });
   </script>
 </body>
